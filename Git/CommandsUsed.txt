@@ -1,0 +1,94 @@
+GIT HANDS-ON LAB - ALL COMMANDS USED
+====================================
+
+HOL 1: BASIC COMMANDS
+====================
+git --version
+git config --global user.name "Name"
+git config --global user.email "email@example.com"
+git config --global user.name
+git config --global user.email
+mkdir directory-name
+cd directory-name
+git init
+ls -la
+git status
+echo "content" > filename.txt
+git add filename.txt
+git add .
+git commit -m "commit message"
+git log
+git log --oneline
+git log --decorate
+echo "new content" >> filename.txt
+git diff
+git show commit-hash
+git tag v1.0.0
+git tag -l
+
+HOL 2: BRANCHING AND MERGING
+============================
+git branch
+git branch branch-name
+git branch -a
+git branch -v
+git checkout branch-name
+git checkout -b new-branch-name
+git merge branch-name
+git branch -d branch-name
+git branch -D branch-name (force delete)
+git log --oneline --all
+git log --oneline --graph
+git log --oneline --all --graph
+git diff branch1 branch2
+git branch -r
+
+HOL 3: REMOTE OPERATIONS
+========================
+git remote
+git remote -v
+git remote add origin url
+git remote remove origin
+git remote show origin
+git remote rename origin upstream
+git fetch origin
+git pull origin branch-name
+git push origin branch-name
+git push origin --all
+git push origin --tags
+git clone repository-url
+git clone repository-url directory-name
+git pull
+git push
+git log --oneline
+git branch -a
+git fetch --all
+git branch -u origin/master (set upstream)
+git branch -vv (view tracking branches)
+git push origin --delete branch-name
+git branch -a
+git tag v2.0.0
+git push origin v2.0.0
+git push origin --tags
+
+ADDITIONAL USEFUL COMMANDS
+==========================
+git status
+git add .
+git commit -m "message"
+git reset filename.txt (unstage)
+git reset --soft HEAD~1 (undo last commit, keep changes)
+git reset --hard HEAD~1 (undo last commit, discard changes)
+git revert commit-hash
+git stash
+git stash list
+git stash pop
+git stash apply
+git rebase branch-name
+git rebase -i HEAD~3 (interactive rebase)
+git cherry-pick commit-hash
+git clean -fd (remove untracked files)
+git reflog
+git tag -a v1.0.0 -m "Version 1.0.0"
+git tag -d tag-name
+git push origin :tag-name (delete remote tag)

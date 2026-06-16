@@ -1,0 +1,128 @@
+git --version
+git version 2.40.0.windows.1
+
+git config --global user.name "Rajesh Kumar"
+git config --global user.email "rajesh.kumar@example.com"
+
+git config --global user.name
+Rajesh Kumar
+
+git config --global user.email
+rajesh.kumar@example.com
+
+mkdir my-project
+cd my-project
+
+git init
+Initialized empty Git repository in C:/Users/kesam/my-project/.git/
+
+ls -la
+total 8
+drwxr-xr-x 1 user 197609 0 Jun 15 10:45 .
+drwxr-xr-x 1 user 197609 0 Jun 15 10:44 ..
+drwxr-xr-x 1 user 197609 0 Jun 15 10:45 .git
+
+git status
+On branch master
+
+No commits yet
+
+nothing to commit
+
+echo "# My Project" > README.md
+
+echo "console.log('Hello World');" > app.js
+
+git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        app.js
+
+nothing added to commit but untracked files present (use "git track")
+
+git add README.md
+git add app.js
+
+git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git add" to remove): 
+        new file:   README.md
+        new file:   app.js
+
+git commit -m "Initial commit with README and app.js"
+[master (root-commit) 3a4f1c2] Initial commit with README and app.js
+ 2 files changed, 2 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 app.js
+
+git log
+commit 3a4f1c2e8b9d4c5f6a7e8d9c0b1a2f3e4d5c6b7a
+Author: Rajesh Kumar <rajesh.kumar@example.com>
+Date:   Sun Jun 15 10:47:00 2026 +0530
+
+    Initial commit with README and app.js
+
+git log --oneline
+3a4f1c2 Initial commit with README and app.js
+
+echo "module.exports = {app};" >> app.js
+
+git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit
+
+git diff
+diff --git a/app.js b/app.js
+index 1234567..abcdefg 100644
+--- a/app.js
++++ b/app.js
+@@ -1 +1,2 @@
+ console.log('Hello World');
++module.exports = {app};
+
+git add app.js
+
+git commit -m "Add module export to app.js"
+[master 8b7c9e1] Add module export to app.js
+ 1 file changed, 1 insertion(+)
+
+git log --oneline
+8b7c9e1 Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git show 8b7c9e1
+commit 8b7c9e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d
+Author: Rajesh Kumar <rajesh.kumar@example.com>
+Date:   Sun Jun 15 10:50:00 2026 +0530
+
+    Add module export to app.js
+
+diff --git a/app.js b/app.js
+index 1234567..abcdefg 100644
+--- a/app.js
++++ b/app.js
+@@ -1 +1,2 @@
+ console.log('Hello World');
++module.exports = {app};
+
+git tag v1.0.0
+git tag
+v1.0.0
+
+git log --decorate
+8b7c9e1 (HEAD -> master, tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js

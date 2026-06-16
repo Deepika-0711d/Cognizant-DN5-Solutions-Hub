@@ -1,0 +1,119 @@
+git branch
+* master
+
+git branch feature/auth
+git branch feature/database
+
+git branch
+  feature/auth
+  feature/database
+* master
+
+git checkout feature/auth
+Switched to branch 'feature/auth'
+
+echo "function login(user) { return user; }" > auth.js
+
+git add auth.js
+
+git commit -m "Add login function"
+[feature/auth e5f3a2c] Add login function
+ 1 file changed, 1 insertion(+)
+
+git log --oneline
+e5f3a2c Add login function
+8b7c9e1 (master, tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git checkout feature/database
+Switched to branch 'feature/database'
+
+echo "const db = require('mongodb');" > database.js
+
+git add database.js
+
+git commit -m "Add database connection module"
+[feature/database 9k2l0m9] Add database connection module
+ 1 file changed, 1 insertion(+)
+
+git log --oneline
+9k2l0m9 Add database connection module
+8b7c9e1 (master, tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git checkout master
+Switched to branch 'master'
+
+git branch -v
+  feature/auth    e5f3a2c Add login function
+  feature/database 9k2l0m9 Add database connection module
+* master          8b7c9e1 Add module export to app.js
+
+git merge feature/auth
+Updating 8b7c9e1..e5f3a2c
+Fast-forward
+ auth.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+git log --oneline
+e5f3a2c (HEAD -> master) Add login function
+8b7c9e1 (tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git merge feature/database
+Updating e5f3a2c..9k2l0m9
+Fast-forward
+ database.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+git log --oneline --all --graph
+* 9k2l0m9 (HEAD -> master, feature/database) Add database connection module
+* e5f3a2c (feature/auth) Add login function
+* 8b7c9e1 (tag: v1.0.0) Add module export to app.js
+* 3a4f1c2 Initial commit with README and app.js
+
+git branch -d feature/auth
+Deleted branch feature/auth (was e5f3a2c).
+
+git branch -d feature/database
+Deleted branch feature/database (was 9k2l0m9).
+
+git branch
+* master
+
+git checkout -b feature/payment
+
+echo "function processPayment(amount) { return amount; }" > payment.js
+
+git add payment.js
+
+git commit -m "Add payment processing module"
+[feature/payment a7b8c9d] Add payment processing module
+ 1 file changed, 1 insertion(+)
+
+git checkout master
+
+echo "// Main application" >> app.js
+
+git add app.js
+
+git commit -m "Update main application"
+[master f1e2d3c] Update main application
+ 1 file changed, 1 insertion(+)
+
+git merge feature/payment
+Auto-merging app.js
+Merge made by the 'recursive' strategy.
+ payment.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+git log --oneline --graph
+*   f1e2d3c Merge branch 'feature/payment'
+|\
+| * a7b8c9d Add payment processing module
+* | f1e2d3c Update main application
+|/
+* 9k2l0m9 Add database connection module
+* e5f3a2c Add login function
+* 8b7c9e1 (tag: v1.0.0) Add module export to app.js
+* 3a4f1c2 Initial commit with README and app.js

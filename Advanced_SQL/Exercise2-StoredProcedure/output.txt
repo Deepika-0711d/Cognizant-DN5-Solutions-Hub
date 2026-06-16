@@ -1,0 +1,35 @@
+EXERCISE 2: STORED PROCEDURE OUTPUT
+====================================
+
+CALL GetEmployeesByDept('IT');
+
+emp_id | emp_name       | department | salary | hire_date
+-------|----------------|------------|--------|----------
+    11 | Priya Singh    | IT         | 72000  | 2019-03-20
+     3 | Amit Patel     | IT         | 68000  | 2021-06-10
+     1 | Rajesh Kumar   | IT         | 65000  | 2020-01-15
+
+---
+
+CALL GetEmployeesByDept('Sales');
+
+emp_id | emp_name       | department | salary | hire_date
+-------|----------------|------------|--------|----------
+     7 | Sanjay Reddy   | Sales      | 75000  | 2019-07-22
+     6 | Anaya Nair     | Sales      | 70000  | 2020-05-12
+     8 | Divya Gupta    | Sales      | 68000  | 2021-01-30
+
+---
+
+CALL GetEmployeesByDept('HR');
+
+emp_id | emp_name       | department | salary | hire_date
+-------|----------------|------------|--------|----------
+     5 | Vikram Desai   | HR         | 60000  | 2018-11-05
+     4 | Neha Sharma    | HR         | 55000  | 2020-02-28
+
+EXPLANATION:
+- Procedure accepts department name as input parameter (deptName)
+- Filters employees by matching department
+- Returns sorted results by salary in descending order
+- CALL statement executes the procedure with different parameters

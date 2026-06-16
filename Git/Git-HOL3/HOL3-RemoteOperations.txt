@@ -1,0 +1,147 @@
+git remote -v
+
+git remote add origin https://github.com/rajesh-kumar/my-project.git
+
+git remote -v
+origin  https://github.com/rajesh-kumar/my-project.git (fetch)
+origin  https://github.com/rajesh-kumar/my-project.git (push)
+
+git remote show origin
+* remote origin
+  Fetch URL: https://github.com/rajesh-kumar/my-project.git
+  Push URL: https://github.com/rajesh-kumar/my-project.git
+  HEAD branch: master
+  Remote branches:
+    master                tracked
+    feature/notifications tracked
+  Local branches configured for 'origin':
+    master merges with remote master
+
+git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 1.15 KiB | 1.15 MiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/rajesh-kumar/my-project.git
+ * [new branch]      master -> master
+
+git branch -a
+* master
+  remotes/origin/master
+
+git fetch origin
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), 898 bytes | 448 KiB/s, done.
+From https://github.com/rajesh-kumar/my-project.git
+   f1e2d3c..a9b8c7d  master     -> origin/master
+
+git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update the local repository)
+
+nothing to commit, working tree clean
+
+git pull origin master
+Updating f1e2d3c..a9b8c7d
+Fast-forward
+ config.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+git log --oneline
+a9b8c7d Update configuration
+f1e2d3c Merge branch 'feature/payment'
+e5f3a2c Add login function
+8b7c9e1 (tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git checkout -b feature/notifications
+
+echo "function sendNotification(msg) { console.log(msg); }" > notifications.js
+
+git add notifications.js
+
+git commit -m "Add notification system"
+[feature/notifications c3d4e5f] Add notification system
+ 1 file changed, 1 insertion(+)
+
+git push origin feature/notifications
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 850 bytes | 850 B/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote: Create a pull request for 'feature/notifications' on GitHub by visiting:
+remote:      https://github.com/rajesh-kumar/my-project/pull/new/feature/notifications
+To https://github.com/rajesh-kumar/my-project.git
+ * [new branch]      feature/notifications -> feature/notifications
+
+git branch -a
+* feature/notifications
+  master
+  remotes/origin/master
+  remotes/origin/feature/notifications
+
+git checkout master
+
+git pull origin master
+
+git merge feature/notifications
+Merge made by the 'recursive' strategy.
+ notifications.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 11 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.23 KiB | 1.23 MiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+To https://github.com/rajesh-kumar/my-project.git
+   a9b8c7d..d8e9f0a master -> master
+
+git log --oneline
+d8e9f0a (HEAD -> master, origin/master) Merge branch 'feature/notifications'
+c3d4e5f (feature/notifications) Add notification system
+a9b8c7d Update configuration
+f1e2d3c Merge branch 'feature/payment'
+e5f3a2c Add login function
+8b7c9e1 (tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git clone https://github.com/rajesh-kumar/my-project.git my-project-copy
+Cloning into 'my-project-copy'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Receiving objects: 100% (12/12), 2.34 KiB | 2.34 MiB/s, done.
+Resolving deltas: 100% (4/4), done.
+
+cd my-project-copy
+
+git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+git log --oneline
+d8e9f0a (HEAD -> master, origin/master) Merge branch 'feature/notifications'
+c3d4e5f (origin/feature/notifications) Add notification system
+a9b8c7d Update configuration
+f1e2d3c Merge branch 'feature/payment'
+e5f3a2c Add login function
+8b7c9e1 (tag: v1.0.0) Add module export to app.js
+3a4f1c2 Initial commit with README and app.js
+
+git tag -l
+v1.0.0

@@ -1,0 +1,23 @@
+EXERCISE 1: WINDOW FUNCTIONS OUTPUT
+====================================
+
+Exercise	Exercise 1: Window Functions with ROW_NUMBER, RANK, DENSE_RANK
+Separator	---
+
+emp_id | emp_name         | department | salary  | row_num | salary_rank | dense_rnk
+-------|------------------|------------|---------|---------|-------------|----------
+   11  | Priya Singh      | IT         | 72000   |    1    |      1      |    1
+    3  | Amit Patel       | IT         | 68000   |    2    |      2      |    2
+    1  | Rajesh Kumar     | IT         | 65000   |    3    |      3      |    3
+    5  | Vikram Desai     | HR         | 60000   |    1    |      1      |    1
+    4  | Neha Sharma      | HR         | 55000   |    2    |      2      |    2
+    7  | Sanjay Reddy     | Sales      | 75000   |    1    |      1      |    1
+    6  | Anaya Nair       | Sales      | 70000   |    2    |      2      |    2
+    8  | Divya Gupta      | Sales      | 68000   |    3    |      3      |    3
+    9  | Harsh Malhotra   | Finance    | 62000   |    1    |      1      |    1
+   10  | Sneha Chopra     | Finance    | 58000   |    2    |      2      |    2
+
+EXPLANATION:
+- ROW_NUMBER(): Assigns unique sequential numbers within each department based on salary ranking
+- RANK(): Assigns ranking by salary within department, with gaps for ties (same salary gets same rank)
+- DENSE_RANK(): Assigns ranking by salary within department without gaps between ranks
