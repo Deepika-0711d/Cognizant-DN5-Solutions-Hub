@@ -1,0 +1,12 @@
+/*
+3. Selectors Playground
+Scenario: You need to style various elements based on IDs, classes, and element types.
+Objective: Master different selector types.
+Task:
+• Use:
+o Universal selector * to reset margin/padding
+o Element selector to style all <h2>
+o ID selector #mainHeader for the banner
+o Class selector .eventCard for event containers
+o Grouping selector for h3, p to style together
+*/

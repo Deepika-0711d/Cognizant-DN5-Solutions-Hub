@@ -1,0 +1,14 @@
+/*
+2. CSS Syntax and Comments
+Scenario: You’ve joined a team and need to understand and maintain a large stylesheet.
+Objective: Write clean, readable CSS with proper structure and comments.
+Task:
+• Create a section in styles.css with formatted rules and consistent indentation.
+• Add descriptive comments above selectors.
+• Example:
+/* Style for main CTA button */
+.cta-button {
+background-color: #007BFF;
+color: white;
+}
+*/

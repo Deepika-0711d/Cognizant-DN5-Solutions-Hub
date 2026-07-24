@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Event Feedback</title>
+
+    <style>
+        img {
+            width: 250px;
+            height: 180px;
+            border: 3px solid blue;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+
+        function validatePhone() {
+
+            let phone = document.getElementById("phone").value;
+
+            if (phone.length != 10) {
+                alert("Enter Valid Phone Number");
+            }
+
+        }
+
+        function showFee() {
+
+            let fee = document.getElementById("event").value;
+
+            document.getElementById("fee").innerHTML = "Fee : ₹" + fee;
+
+        }
+
+        function submitMsg() {
+
+            alert("Feedback Submitted Successfully");
+
+        }
+
+        function enlarge(img) {
+
+            img.style.width = "400px";
+            img.style.height = "300px";
+
+        }
+
+        function countChar() {
+
+            let len = document.getElementById("feedback").value.length;
+
+            document.getElementById("count").innerHTML = len + " Characters";
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Event Feedback Form</h2>
+
+    Phone Number
+
+    <input type="text" id="phone" onblur="validatePhone()">
+
+    <br><br>
+
+    Select Event
+
+    <select id="event" onchange="showFee()">
+
+        <option value="100">Sports</option>
+        <option value="200">Music</option>
+        <option value="300">Food Festival</option>
+
+    </select>
+
+    <p id="fee"></p>
+
+    <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt="Community Event"
+        title="Double Click to Enlarge"
+        ondblclick="enlarge(this)">
+
+    <br><br>
+
+    <textarea
+        id="feedback"
+        rows="5"
+        cols="40"
+        onkeyup="countChar()"
+        placeholder="Enter your feedback here..."></textarea>
+
+    <p id="count">0 Characters</p>
+
+    <button onclick="submitMsg()">
+        Submit
+    </button>
+
+</body>
+
+</html>

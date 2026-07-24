@@ -1,0 +1,10 @@
+/*
+8. Box Model & Layout Control
+Scenario: Sections are cramped and need spacing.
+Objective: Control element spacing with margin, padding, border, and outline.
+Task:
+• Use developer tools to inspect and tweak box model properties
+• Add border, padding, and margin to .eventCard
+• Add outline to highlight selected fields in a form
+• Compare visibility: hidden vs. display: none
+*/

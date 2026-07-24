@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Video Invite</title>
+
+    <script>
+
+        function videoReady() {
+
+            document.getElementById("msg").innerHTML = "Video Ready to Play";
+
+        }
+
+        window.onbeforeunload = function () {
+
+            return "Your form is not completed. Are you sure you want to leave?";
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Community Event Promo</h2>
+
+    <video width="500" controls oncanplay="videoReady()">
+
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+
+        Your browser does not support HTML5 video.
+
+    </video>
+
+    <p id="msg"></p>
+
+</body>
+
+</html>

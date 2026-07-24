@@ -1,0 +1,9 @@
+/*
+4. Color & Background Styling
+Scenario: You’re theming the portal based on a city council’s branding.
+Objective: Apply consistent colors and background visuals.
+Task:
+• Use HEX and RGBA for setting text and background colors
+• Add a background image to the body with fallback color
+• Apply gradients to section headers using background: linear-gradient(...)
+*/

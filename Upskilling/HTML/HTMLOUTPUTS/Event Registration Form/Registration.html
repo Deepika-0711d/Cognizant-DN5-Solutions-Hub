@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Event Registration</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+        }
+
+        form{
+            width:400px;
+            margin:auto;
+            border:2px solid gray;
+            padding:20px;
+            border-radius:10px;
+        }
+
+        input,select,textarea{
+            width:100%;
+            padding:8px;
+            margin:8px 0;
+        }
+
+        button{
+            background:blue;
+            color:white;
+            padding:10px;
+            border:none;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<form onsubmit="event.preventDefault();msg.value='Registration Successful';">
+
+<h2 align="center">Event Registration</h2>
+
+<label>Name</label>
+
+<input type="text" placeholder="Enter Name" required autofocus>
+
+<label>Email</label>
+
+<input type="email" placeholder="Enter Email" required>
+
+<label>Date</label>
+
+<input type="date" required>
+
+<label>Event Type</label>
+
+<select required>
+
+<option>Sports</option>
+
+<option>Music</option>
+
+<option>Food Festival</option>
+
+<option>Art Exhibition</option>
+
+</select>
+
+<label>Message</label>
+
+<textarea placeholder="Enter Message"></textarea>
+
+<button type="submit">Register</button>
+
+<br><br>
+
+<output name="msg"></output>
+
+</form>
+
+</body>
+
+</html>

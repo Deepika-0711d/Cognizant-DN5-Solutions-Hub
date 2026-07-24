@@ -1,0 +1,9 @@
+/*
+7. Table Styling
+Scenario: The events admin table needs a cleaner look.
+Objective: Format tables using CSS.
+Task:
+• Style table, th, and td with borders, padding, and background color
+• Add zebra striping to rows using nth-child(even)
+• Use border-collapse: collapse and text-align: center
+*/

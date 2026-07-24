@@ -1,0 +1,9 @@
+/*
+6. Link and List Styling
+Scenario: The default blue links and bullet lists don’t match the design.
+Objective: Customize links and lists.
+Task:
+• Style links with :link, :hover, :active, and :visited pseudo-classes
+• Use list-style-type, list-style-position, and remove bullets from nav menus
+• Add padding and margin to list items for spacing
+*/
